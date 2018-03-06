@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+
+    <link rel="stylesheet" href="css/hexmap.css">
+</head>
+<body>
+<div>
+    <button id="wUp">Increase Width</button>
+    <button id="wDown">Decrease Width</button>
+    <button id="hUp">Increase Heigth</button>
+    <button id="hDown">Decrease Heigth</button>
+    <button id="pUp">Increase Padding</button>
+    <button id="pDown">Decrease Padding</button>
+    <button id="borders">Toggle borders</button>
+    <button id="texts">Toggle texts</button>
+</div>
+<div id="svgContainer" style="margin-left:80px;margin-top:20px;width:1400px;height:100%;margin-right:0px;">
+</div>
+
+<div id="stackedBar"></div>
+
+<script src="js/hexmap.js"></script>
+
+<script>
+    let conceptMap;
+
+    let width = 1300;
+    let height = 1650;
+    let padding = 20;
+    let conceptMapBorders = true;
+    let conceptTexts = true;
+
+    hexmap.makeMap('data/java_map_1.json', 'div#svgContainer')
+        .then((hexMapObject)=>{
+            conceptMap = hexMapObject;
+            conceptMap.canvas.width = width;
+            conceptMap.canvas.height = height;
+            conceptMap.canvas.padding.set(padding);
+            conceptMap.displayBorders = conceptMapBorders;
+            conceptMap.hexes.displayText = conceptTexts;
+        });
+
+    document.getElementById('wUp').addEventListener('click', ()=>{
+        width += 50;
+        conceptMap.canvas.width = width;
+    });
+
+    document.getElementById('wDown').addEventListener('click', ()=>{
+        width -= 50;
+        conceptMap.canvas.width = width;
+    });
+
+    document.getElementById('hUp').addEventListener('click', ()=>{
+        height += 50;
+        conceptMap.canvas.height = height;
+    });
+
+    document.getElementById('hDown').addEventListener('click', ()=>{
+        height -= 50;
+        conceptMap.canvas.height = height;
+    });
+
+    document.getElementById('pUp').addEventListener('click', ()=>{
+        padding += 5;
+        conceptMap.canvas.padding.set(padding);
+    });
+
+    document.getElementById('pDown').addEventListener('click', ()=>{
+        padding -= 5;
+        conceptMap.canvas.padding.set(padding);
+    });
+
+    document.getElementById('borders').addEventListener('click', ()=>{
+        conceptMapBorders = !conceptMapBorders;
+        conceptMap.displayBorders = conceptMapBorders;
+    });
+
+    document.getElementById('texts').addEventListener('click', ()=>{
+        conceptTexts = !conceptTexts;
+        conceptMap.hexes.displayText = conceptTexts;
+    })
+
+
+    
+
+
+</script>
+
+</body>
+</html>

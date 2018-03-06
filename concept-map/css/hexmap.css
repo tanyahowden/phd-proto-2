@@ -1,0 +1,186 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+.noSelect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+svg.hexmap text.hexmapTitle {
+  text-anchor: end;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 900;
+  font-size: 200px;
+}
+svg.hexmap g.hex polygon {
+  fill: #fafafa;
+  stroke: #b0bec5;
+  stroke-width: 2;
+  -webkit-transition-duration: 100ms;
+          transition-duration: 100ms;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+}
+svg.hexmap g.hex polygon.highlight1 {
+  fill: #90a4ae;
+}
+svg.hexmap g.hex polygon.highlight2 {
+  stroke: #37474f;
+  stroke-width: 4;
+}
+svg.hexmap g.hex g.text text {
+  font-family: "Open Sans", sans-serif;
+  fill: #263238;
+  text-anchor: middle;
+  alignment-baseline: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+svg.hexmap g.hex circle {
+  fill-opacity: 0.8;
+  fill: none;
+  -webkit-transition-duration: 100ms;
+          transition-duration: 100ms;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+}
+svg.hexmap g.hex circle.marked1 {
+  fill: #5B5EA6;
+}
+svg.hexmap g.hex circle.marked2 {
+  fill: #BC2436;
+}
+svg.hexmap g.hex circle.marked3 {
+  fill: #009874;
+}
+svg.hexmap g.hex circle.marked4 {
+  fill: #EFC050;
+}
+svg.hexmap g.hex circle.marked5 {
+  fill: #6F4181;
+}
+svg.hexmap g.hex circle.marked6 {
+  fill: #DD4124;
+}
+svg.hexmap g.hex circle.marked7 {
+  fill: #935635;
+}
+svg.hexmap g.hex circle.marked8 {
+  fill: #B2BAB6;
+}
+svg.hexmap g.hex circle.marked9 {
+  fill: #C3447A;
+}
+svg.hexmap g.hex circle.marked10 {
+  fill: #55B4B0;
+}
+svg.hexmap path.border {
+  stroke-width: 5;
+  fill: none;
+  fill-opacity: 0;
+}
+svg.aggloHexmap path.dendro {
+  fill: none;
+  stroke-width: 2px;
+  stroke: #cfd8dc;
+  -webkit-transition-duration: 100ms;
+          transition-duration: 100ms;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+}
+svg.aggloHexmap path.dendro.highlight {
+  stroke: #37474f;
+}
+svg.aggloHexmap path.dendro.hide {
+  stroke: none;
+}
+svg.projHexmap g.scatter rect {
+  fill: white;
+  stroke: #37474f;
+  -webkit-transition-duration: 100ms;
+          transition-duration: 100ms;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+}
+svg.projHexmap g.scatter rect.highlight1 {
+  stroke-width: 4;
+}
+svg.projHexmap g.scatter rect.highlight2 {
+  fill: #cfd8dc;
+}
+svg.projHexmap g.scatter rect.highlight3 {
+  fill: #cfd8dc;
+}
+svg.projHexmap g.scatter rect.hide {
+  display: none;
+}
+svg.projHexmap g.scatter text.dim {
+  fill: #37474f;
+  fill-opacity: 0.3;
+  font-weight: bold;
+  -webkit-transition-duration: 100ms;
+          transition-duration: 100ms;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+svg.projHexmap g.scatter text.dim.highlight1 {
+  fill-opacity: 1;
+}
+svg.projHexmap g.scatter text.dim.highlight2 {
+  fill-opacity: 1;
+}
+svg.projHexmap g.backgroundGrid polygon {
+  fill: none;
+  stroke: #cfd8dc;
+  stroke-width: 1;
+  stroke-opacity: 0;
+  -webkit-transition-duration: 100ms;
+          transition-duration: 100ms;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+}
+svg.projHexmap g.backgroundGrid.show polygon {
+  stroke-opacity: 1;
+}
+
+.hex circle{
+  pointer-events: none;
+}
+
+.hex .text{
+  pointer-events: none;
+}
+
+.d3-tip{
+	line-height: 1;
+	font-weight: normal;
+	padding: 10px;
+  font-size: 14px;
+	background: #474C58;
+	color: #ffffff;
+	border-radius: 2px;
+}
+
+.d3-tip:after{
+	box-sizing: border-box;
+	display: inline;
+	width: 100%;
+	line-height: 1;
+	color: #474C58;
+	position:absolute;
+	text-align: center;
+}
+
+.d3-tip.n:after{
+	margin: -1px 0 0;
+	top:100%;
+	left:0;
+}
